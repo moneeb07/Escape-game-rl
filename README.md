@@ -13,11 +13,11 @@ The agent operates in a high-risk arena where it must dodge bullets, avoid movin
 
 Performance Stats:
 
-✅ 90% Bullet Avoidance
+ 90% Bullet Avoidance
 
-✅ 80% Ghost Evasion
+ 80% Ghost Evasion
 
-✅ 87% Saw Avoidance
+ 87% Saw Avoidance
 (Measured across 1,000 training episodes)
 
 🔹 Level 2 — Lever Escape Challenge
@@ -28,7 +28,7 @@ The agent must activate four levers in the correct sequence to unlock the exit w
 
 The agent navigates a complex maze filled with fire hazards, traps, and stun mechanisms while avoiding enemy interference. Success depends on selecting safe routes and adapting to environmental threats.
 
-🧩 Key Features
+ Key Features
 
 Deep Q-Learning agent trained through reward-based learning
 
