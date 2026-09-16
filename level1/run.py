@@ -10,7 +10,7 @@ def run_level1(model_path="best_model.pth"):
     try:
         # Initialize model
         model = DQN(22, env.action_space.n).to(device)
-        checkpoint = torch.load(model_path, map_location=device)
+        checkpoint = torch.load(model_path, map_location=device, weights_only=False)
         model.load_state_dict(checkpoint['policy_net_state_dict'])
         model.eval()
         

@@ -3,7 +3,7 @@ import sys
 import subprocess
 
 # Set up directory paths
-ai_final_dir = r"D:\ai\ai_final"
+ai_final_dir = os.path.dirname(os.path.abspath(__file__))
 project_dir = os.path.join(ai_final_dir, "The project itself")
 src_dir = os.path.join(project_dir, "src")
 level1_dir = os.path.join(ai_final_dir, "level1")

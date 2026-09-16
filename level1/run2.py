@@ -10,7 +10,7 @@ def run_game_once(model_path="2last_iter_105.pth"):
     try:
         # Initialize model
         model = DQN(19, env.action_space.n).to(device)
-        checkpoint = torch.load(model_path, map_location=device)
+        checkpoint = torch.load(model_path, map_location=device, weights_only=False)
         model.load_state_dict(checkpoint['policy_net_state_dict'])
         model.eval()
         

@@ -12,7 +12,7 @@ def run_game(model_path="best_model.pth", num_episodes=5):
     try:
         # Initialize model with correct input dimensions (22 for your environment)
         model = DQN(22, env.action_space.n).to(device)
-        checkpoint = torch.load(model_path, map_location=device)
+        checkpoint = torch.load(model_path, map_location=device, weights_only=False)
         model.load_state_dict(checkpoint['policy_net_state_dict'])
         model.eval()
         
