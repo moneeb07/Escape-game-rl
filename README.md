@@ -1,12 +1,21 @@
-# 🧠 RL Escape Room with Adversarial AI
+# RL Escape Room with Adversarial AI
 
-A three-level escape room where every level is played by an **autonomous agent** — no human input. Each level showcases a different branch of AI: deep reinforcement learning, adversarial multi-agent planning, and classical graph search under hazard constraints.
+A three-level escape room in which every level is played by an **autonomous agent**, without human input. Each level demonstrates a different branch of AI: deep reinforcement learning, adversarial multi-agent planning, and classical graph search under hazard constraints.
 
 The agent must survive hazards, solve a randomized puzzle against a saboteur, and navigate a trap-filled maze. Levels are gated — failing one stops the run.
 
 ---
 
-## 🚀 Overview
+## Documentation and Media
+
+| Resource | Link |
+|---|---|
+| Project Paper | [View paper](https://drive.google.com/file/d/1iKnfQ0rO-9pqQZX2WC6-bb9SaQvr3f34/view?usp=sharing) |
+| Demo Video (Level 1) | [Watch demo](https://drive.google.com/file/d/1mv55oWKijQlvkETMPqagLJS9aK8EdErO/view?usp=sharing) |
+
+---
+
+## Overview
 
 `ai_game.py` is the orchestrator. It runs the three levels in sequence, and each level must succeed before the next begins:
 
@@ -25,9 +34,9 @@ Level 1 (DQN)  ──pass──▶  Level 2 (Adversarial AI)  ──pass──�
 
 ---
 
-## 🎮 Game Levels
+## Game Levels
 
-### 🔹 Level 1 — Hazard Escape (Deep RL)
+### Level 1 — Hazard Escape (Deep RL)
 
 A trained **DQN agent** must collect a randomly-placed clue, then reach the escape gate on the left wall — while dodging a travelling bullet, a ghost that actively chases it, and two saws patrolling vertically at 30% and 60% of screen width.
 
@@ -45,7 +54,7 @@ A trained **DQN agent** must collect a randomly-placed clue, then reach the esca
 | Ghost | 80% |
 | Saw | 87% |
 
-### 🔹 Level 2 — Lever Escape Challenge (Adversarial AI)
+### Level 2 — Lever Escape Challenge (Adversarial AI)
 
 Fully autonomous **AI vs AI**. An `AgentAI` must set **four levers** to a randomly generated target combination to unlock the exit door, while an `EnemyAI` actively works against it.
 
@@ -55,9 +64,9 @@ Fully autonomous **AI vs AI**. An `AgentAI` must set **four levers** to a random
 - **Hazards** — three saws move along fixed paths and can damage and stun the agent.
 - **Engine** — a small custom entity-component engine (`Entity`, `Body`, `Sprite`, `Trigger`) with tile maps, physics triggers, inventory, and combat.
 
-The interesting part is the **contested objective**: progress is not monotonic, since the enemy can undo completed work, so the agent must re-verify state continuously rather than plan once.
+The core challenge is the **contested objective**: progress is not monotonic, since the enemy can undo completed work, which requires the agent to continuously re-verify state rather than plan once.
 
-### 🔹 Level 3 — Maze Survival (Classical Search)
+### Level 3 — Maze Survival (Classical Search)
 
 The agent crosses a **17 × 25 grid maze** seeded with **25 traps** and **35 fires**, starting at 100 health, while an adversary pursues it.
 
@@ -68,7 +77,7 @@ The agent crosses a **17 × 25 grid maze** seeded with **25 traps** and **35 fir
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 Requires **Python 3.10–3.13**. PyTorch does not yet publish wheels for 3.14.
 
@@ -111,7 +120,7 @@ pip install pygame numpy gymnasium torch
 
 ---
 
-## ▶️ Running
+## Running
 
 **Full three-level run:**
 
@@ -138,7 +147,7 @@ python perfomance.py
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -160,7 +169,7 @@ python perfomance.py
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Python** · **PyTorch** · **Gymnasium** · **NumPy** · **pygame**
 
@@ -168,7 +177,7 @@ python perfomance.py
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 | Problem | Fix |
 |---|---|
